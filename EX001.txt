@@ -1,0 +1,40 @@
+import React, { Component } from 'react';
+import { View, Text, Image } from 'react-native';
+
+class App extends Component {
+  render() {
+    return (
+      <View>
+        <Text>{'\n\n'}Olá Mundo!!!</Text>
+        <Text>Meu primeiro App!</Text>
+        
+        {/* Texto estilizado */}
+        <Text style={{ color: '#FF0000', fontSize: 25, margin: 15 }}>
+          Teste de propriedades
+        </Text>
+
+        {/* Corrigindo o uso do componente Imagem */}
+        <Imagem Largura={200} Altura={200} Nome="Omnitrix" />
+      </View>
+    );
+  }
+}
+
+// Definição do componente Imagem
+class Imagem extends Component {
+  render() {
+    let img = 'https://preview.redd.it/5cuxcqi3fb091.png?width=1080&crop=smart&auto=webp&s=9fd7470203d1d645f18630e9b7d89a7ffc068ab7';
+    
+    return (
+      <View>
+        <Image
+          source={{ uri: img }}
+          style={{ width: this.props.Largura, height: this.props.Altura }}
+        />
+        <Text style={{ fontSize: 30 }}>{this.props.Nome}</Text>
+      </View>
+    );
+  }
+}
+
+export default App;
